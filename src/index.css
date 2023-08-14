@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(224, 224, 208);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+@layer base {
+  .amarillo {
+    background-color: #fcf327;
+  }
+  .rojol {
+    background-color: #ee0f45;
+  }
+  .rojol2 {
+    background-color: #c90c38;
+  }
+}
+/* index.css */
+
+@font-face {
+  font-family: "fonte";
+  src: url("../src/assets/Bayon-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "letra";
+  src: url("../src/assets/Montserrat-Regular.ttf") format("truetype");
+}
+
+.fonte {
+  font-family: "fonte", sans-serif;
+}
+
+.letra {
+  font-family: "letra", sans-serif;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.hover\:shake:hover {
+  animation: shake 0.4s;
+  animation-iteration-count: 1;
+}
