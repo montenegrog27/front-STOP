@@ -15,7 +15,7 @@ function Admin() {
   return (
     <>
       <main className="bg-gray-200">
-        <Link to={"/"}>
+        <Link to={"/home"}>
           <button className="rounded px-3 py-2 mt-3 ml-3 bg-red-400">
             Volver al Home
           </button>
