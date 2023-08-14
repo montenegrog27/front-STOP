@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsWhatsapp } from "react-icons/bs";
 
 function WhatsApp() {
-  const phoneNumber = "3794094455";
+  const phoneNumber = "3794545310";
   const message = "Hola me gustaría hacer un pedido";
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
     message
