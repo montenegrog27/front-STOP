@@ -8,8 +8,8 @@ function FormLogin() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = () => {
-    if (username === "admin" && password === "12345") {
-      navigate("/admin");
+    if (username === "admin" && password === "nicomomia") {
+      navigate("/admin2717");
     } else {
       setErrorMessage("Usuario/contraseña incorrecto. Intentelo de nuevo");
     }
