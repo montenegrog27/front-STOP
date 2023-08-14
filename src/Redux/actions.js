@@ -9,11 +9,13 @@ const ELIMINAR_AVISO = "ELIMINAR_AVISO";
 const POSTEAR_AVISO = "POSTEAR_AVISO";
 const TRAER_AVISO = "TRAER_AVISO";
 
+const URL = "https://back-production-a8f7.up.railway.app";
+
 const getPrecios = () => {
   // Quita "precios" de los parámetros, ya que no parece ser necesario
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/precios");
+      const response = await axios.get(`${URL}/precios`);
       const data = response.data;
       return dispatch({
         type: TRAER_PRECIOS,
@@ -29,7 +31,8 @@ const modificarPrecio = (nuevosPrecios) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/actualizar-precios",
+        `${URL}/actualizar-precios`,
+
         nuevosPrecios
       );
       const data = response.data;
@@ -48,7 +51,7 @@ const getOfertas = () => {
   // Quita "precios" de los parámetros, ya que no parece ser necesario
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/ofertas");
+      const response = await axios.get(`${URL}/ofertas`);
       const data = response.data;
       return dispatch({
         type: TRAER_OFERTAS,
@@ -64,10 +67,7 @@ const postearOferta = (products) => {
   console.log("ESTO ES PRODUCTS EN ACTION", products);
   return async (dispatch) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3001/ofertas",
-        products
-      );
+      const response = await axios.post(`${URL}/ofertas`, products);
       const data = response.data;
       console.log("ESTO ES POST EN ACTION", data);
       return dispatch({
@@ -80,7 +80,7 @@ const postearOferta = (products) => {
 const eliminarOferta = (id) => {
   return async (dispatch) => {
     try {
-      await axios.delete(`http://localhost:3001/ofertas/${id}`);
+      await axios.delete(`${URL}/${id}`);
       dispatch({
         type: ELIMINAR_OFERTA,
         payload: id, // Envía el ID de la oferta eliminada al reducer
@@ -94,7 +94,7 @@ const eliminarOferta = (id) => {
 const getAviso = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/avisos");
+      const response = await axios.get(`${URL}/avisos`);
       const data = response.data;
       console.log("que pa e", data);
       return dispatch({
@@ -111,7 +111,7 @@ const postearAviso = (titulo, contenido) => {
   console.log("ESTO ES titulo EN ACTION", titulo, contenido);
   return async (dispatch) => {
     try {
-      const response = await axios.post("http://localhost:3001/avisos", {
+      const response = await axios.post(`${URL}/avisos`, {
         titulo: titulo,
         contenido: contenido,
       });
@@ -128,7 +128,7 @@ const eliminarAviso = (id) => {
   console.log("EL ID A ELIMNAR", id);
   return async (dispatch) => {
     try {
-      await axios.delete(`http://localhost:3001/avisos/${id}`);
+      await axios.delete(`${URL}/${id}`);
       dispatch({
         type: ELIMINAR_AVISO,
         payload: id, // Envía el ID de la oferta eliminada al reducer
