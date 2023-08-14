@@ -9,6 +9,13 @@ function Ofertas() {
     dispatch(getOfertas());
   }, [dispatch]);
 
+  function agregarACarrito(producto) {
+    const yaHabia = JSON.parse(localStorage.getItem("carro")) || [];
+    const nuevoCarro = [...yaHabia, producto];
+    localStorage.setItem("carro", JSON.stringify(nuevoCarro));
+    console.log(localStorage.carro);
+  }
+
   return (
     <>
       <div id="ofertas" className="flex justify-center z-5">
@@ -45,6 +52,9 @@ function Ofertas() {
                 <div className="  letra text-start px-3 pb-3 mb-3 items-start flex h-[60px]  text-slate-800  w-full ">
                   {of.producto}
                 </div>
+                <button onClick={() => agregarACarrito(of)}>
+                  agregar a carrito
+                </button>
               </div>{" "}
             </div>
           ))
