@@ -20,7 +20,6 @@ function Aviso() {
   function elimAviso(id) {
     dispatch(eliminarAviso(id));
   }
-  console.log("ETE E EL AVISO", nuevoAviso);
 
   function refrescarAviso() {
     dispatch(getAviso());
@@ -31,7 +30,7 @@ function Aviso() {
         <div className="  text-center rounded-xl font-bold m-3  bg-gray-300 w-[500px]">
           AVISO ACTIVO:
           {aviso[0] ? (
-            <div className="w-auto text-center h-auto">
+            <div className="w-auto text-center flex items-center h-auto">
               "{aviso[0].contenido}"
             </div>
           ) : (

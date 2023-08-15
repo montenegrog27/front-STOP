@@ -20,7 +20,7 @@ function Portada() {
           id="aviso"
           className="absolute border-[6px] items-center h-[200px] w-[250px] border-yellow-400 shadow-2xl mt-[37px] ml-[69%] text-2xl text-gray-200  p-2 rounded-[25px]"
         >
-          <div className="flex justify-center  fonte  text-[40px] text-center">
+          <div className="flex justify-center items-center fonte text-[40px] h-full text-center">
             {aviso ? aviso[0].contenido : ""}
           </div>
         </div>
