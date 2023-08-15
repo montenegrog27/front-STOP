@@ -78,9 +78,10 @@ const postearOferta = (products) => {
   };
 };
 const eliminarOferta = (id) => {
+  console.log("EL ID", id);
   return async (dispatch) => {
     try {
-      await axios.delete(`${URL}/${id}`);
+      await axios.delete(`${URL}/ofertas/${id}`);
       dispatch({
         type: ELIMINAR_OFERTA,
         payload: id, // Envía el ID de la oferta eliminada al reducer
@@ -128,7 +129,7 @@ const eliminarAviso = (id) => {
   console.log("EL ID A ELIMNAR", id);
   return async (dispatch) => {
     try {
-      await axios.delete(`${URL}/${id}`);
+      await axios.delete(`${URL}/avisos/${id}`);
       dispatch({
         type: ELIMINAR_AVISO,
         payload: id, // Envía el ID de la oferta eliminada al reducer

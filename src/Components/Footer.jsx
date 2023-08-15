@@ -25,7 +25,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              379-154769259
+              379-154545310
             </a>
           </div>
           <div className="mb-3 sm:text-sm md:text-xl lg:text-2xl flex flex-row-1">
