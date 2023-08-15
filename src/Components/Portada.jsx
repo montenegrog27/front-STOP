@@ -1,8 +1,16 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import portada from "../assets/Portada2.jpg";
+import { useEffect } from "react";
+import { getAviso } from "../Redux/actions";
 // import portada from "../assets/ARCHIVO.png";
 
 function Portada() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAviso());
+  }, []);
+
   const aviso = useSelector((state) => state.avisos);
   console.log(aviso);
   return (
