@@ -14,83 +14,90 @@ function PreciosDest() {
   }, [dispatch]);
 
   const precios = useSelector((state) => state.precios);
-  console.log("el precioi", precios);
+
+  const productos = [
+    {
+      id: 1,
+      nombre: "Cajon Brahma RET x1L (12)",
+      imagen: brahma,
+      precio: precios.precio,
+    },
+    {
+      id: 2,
+      nombre: "Cajon Coca-Cola x1.5lts RET (8)",
+      imagen: coca,
+      precio: precios.precio,
+    },
+    {
+      id: 3,
+      nombre: "Azucar 1kg pack x10kg (10)",
+      imagen: azucar,
+      precio: precios.precio,
+    },
+    {
+      id: 4,
+      nombre: "Cajon de fanta y Sprite x2lts(8)",
+      imagen: sprFant,
+      precio: precios.precio,
+    },
+  ];
+  const productosConPrecios = productos.map((producto) => {
+    const precioEncontrado = precios.find(
+      (precio) => precio.id === producto.id
+    );
+    if (precioEncontrado) {
+      return {
+        ...producto,
+        precio: precioEncontrado.precio,
+      };
+    }
+    return producto;
+  });
+
   return (
-    <div id="destacados" className="">
-      <div className="mt-5 fonte mb-5 text-[30px] md:text-[35px] lg:text-[45px] text-center">
-        PRECIOS DESTACADOS
-      </div>
-      <div className="flex flex-wrap mg:gap-4 lg:gap-6 justify-center ">
-        {/* Columna 1 */}
-        <div className=" flex flex-col w-[167px] md:w-[220px] bg-white shawod-md text-center h-[350px]   m-1 rounded-t rounded-b-2xl">
-          <img
-            className="mx-auto  w-full p-2 h-[250px]  object-cover"
-            src={brahma}
-            alt=""
-          />
-          <div className=" flex border-t border-slate-300 border-t-1 flex-col justify-start rounded-b-lg items-center">
-            <div className="flex  w-full justify-start px-3 py-1  text-[35px]  text-bold text-slate-800">
-              ${precios[0] && precios[0].precio},
-              <span className="text-sm font-bold underline">00</span>
-            </div>
-            <div className="  letra text-start px-3 pb-3 mb-3 items-start flex h-[60px]  text-slate-800  w-full ">
-              Cajon Brahma RET x1L (12)
-            </div>
-          </div>{" "}
-        </div>
-        {/* Columna 2 */}
-        <div className=" flex flex-col w-[167px] md:w-[220px] bg-white shawod-md text-center h-[350px]   m-1 rounded-t rounded-b-2xl">
-          <img
-            className="mx-auto  w-full p-2 h-[250px]  object-cover"
-            src={coca}
-            alt=""
-          />
-          <div className=" flex border-t border-slate-300 border-t-1 flex-col justify-start rounded-b-lg items-center">
-            <div className="flex  w-full justify-start px-3 py-1  text-[35px]  text-bold text-slate-800">
-              ${precios[1] && precios[1].precio},
-              <span className="text-sm font-bold underline">00</span>
-            </div>
-            <div className="  letra text-start px-3 pb-3 mb-3 items-start flex h-[60px]  text-slate-800  w-full ">
-              Cajon Coca-Cola x1.5lts RET (8)
-            </div>
-          </div>{" "}
-        </div>
-        {/* Columna 3 */}
-        <div className=" flex flex-col w-[167px] md:w-[220px] bg-white shawod-md text-center h-[350px]   m-1 rounded-t rounded-b-2xl">
-          <img
-            className="mx-auto  w-full p-2 h-[250px]  object-cover"
-            src={azucar}
-            alt=""
-          />
-          <div className=" flex border-t border-slate-300 border-t-1 flex-col justify-start rounded-b-lg items-center">
-            <div className="flex  w-full justify-start px-3 py-1  text-[35px]  text-bold text-slate-800">
-              ${precios[2] && precios[2].precio},
-              <span className="text-sm font-bold underline">00</span>
-            </div>
-            <div className="  letra text-start px-3 pb-3 mb-3 items-start flex h-[60px]  text-slate-800  w-full ">
-              Azucar 1kg Ledesma pack x10kg (10)
-            </div>
-          </div>{" "}
-        </div>
-        {/* Columna 4 */}
-        <div className=" flex flex-col w-[167px] md:w-[220px] bg-white shawod-md text-center h-[350px]   m-1 rounded-t rounded-b-2xl">
-          <img
-            className="mx-auto  w-full p-2 h-[250px]  object-cover"
-            src={sprFant}
-            alt=""
-          />
-          <div className=" flex border-t border-slate-300 border-t-1 flex-col justify-start rounded-b-lg items-center">
-            <div className="flex  w-full justify-start px-3 py-1  text-[35px]  text-bold text-slate-800">
-              ${precios[3] && precios[3].precio},
-              <span className="text-sm font-bold underline">00</span>
-            </div>
-            <div className="  letra text-start px-3 pb-3 mb-3 items-start flex h-[60px]  text-slate-800  w-full ">
-              Cajon de fanta y Sprite x2lts(8)
-            </div>
-          </div>{" "}
+    <>
+      <div id="destacados" className="flex justify-center z-5">
+        <div className="border-t-2 w-[70%] border-gray-500 pt-5 text-[30px] md:text-[35px] lg:text-[45px] text-white-700 flex items-center justify-center mt-10 fonte mb-5">
+          Precios Destacados
         </div>
       </div>
-    </div>
+
+      <div className=" flex shadow-xl lg:gap-5  flex-wrap justify-center md:p-10 items-center w-screen">
+        {productosConPrecios && productosConPrecios.length > 0 ? (
+          productosConPrecios.map((of) => (
+            <div
+              key={of.id}
+              className=" flex flex-col  w-[160px] md:w-[220px] bg-white shawod-md text-center h-[380px]   m-1 rounded-t rounded-b-2xl"
+            >
+              <div className="flex justify-end ">
+                <div
+                  id="cartelito"
+                  className=" absolute text-yellow-300 text-lg  px-4 py-1 -m-3   fonte bg-gradient-to-r from-rojoDark shadow-xl to-rojoLight transform -skew-x-12 "
+                >
+                  Oferta!!!
+                </div>
+                <img
+                  className="mx-auto  w-full p-2 h-[250px]  object-cover"
+                  src={of.imagen}
+                  alt=""
+                />
+              </div>
+              <div className=" flex border-t  border-slate-300 border-t-1 flex-col justify-start rounded-b-lg items-center">
+                <div className="flex  w-full justify-start px-3 py-1  text-[35px]  text-bold text-slate-800">
+                  ${of.precio},
+                  <span className="text-sm font-bold underline">00</span>
+                </div>
+                <div className="  letra text-start px-3 pb-3 mb-3 items-start flex h-[60px]  text-slate-800  w-full ">
+                  {of.nombre}
+                </div>
+              </div>{" "}
+            </div>
+          ))
+        ) : (
+          <div>No hay ofertas disponibles</div>
+        )}
+      </div>
+    </>
   );
 }
 
