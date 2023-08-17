@@ -36,7 +36,6 @@ const modificarPrecio = (nuevosPrecios) => {
         nuevosPrecios
       );
       const data = response.data;
-      console.log("esto es data", data);
       return dispatch({
         type: MODIFICAR_PRECIO,
         payload: data,
@@ -64,12 +63,10 @@ const getOfertas = () => {
 };
 
 const postearOferta = (products) => {
-  console.log("ESTO ES PRODUCTS EN ACTION", products);
   return async (dispatch) => {
     try {
       const response = await axios.post(`${URL}/ofertas`, products);
       const data = response.data;
-      console.log("ESTO ES POST EN ACTION", data);
       return dispatch({
         type: POSTEAR_OFERTA,
         payload: data,
@@ -78,7 +75,6 @@ const postearOferta = (products) => {
   };
 };
 const eliminarOferta = (id) => {
-  console.log("EL ID", id);
   return async (dispatch) => {
     try {
       await axios.delete(`${URL}/ofertas/${id}`);
@@ -97,7 +93,6 @@ const getAviso = () => {
     try {
       const response = await axios.get(`${URL}/avisos`);
       const data = response.data;
-      console.log("que pa e", data);
       return dispatch({
         type: TRAER_AVISO,
         payload: data,
@@ -109,7 +104,6 @@ const getAviso = () => {
 };
 
 const postearAviso = (titulo, contenido) => {
-  console.log("ESTO ES titulo EN ACTION", titulo, contenido);
   return async (dispatch) => {
     try {
       const response = await axios.post(`${URL}/avisos`, {
@@ -117,7 +111,6 @@ const postearAviso = (titulo, contenido) => {
         contenido: contenido,
       });
       const data = response.data;
-      console.log("ESTO ES POST EN ACTION", data);
       return dispatch({
         type: POSTEAR_AVISO,
         payload: { data },
@@ -126,7 +119,6 @@ const postearAviso = (titulo, contenido) => {
   };
 };
 const eliminarAviso = (id) => {
-  console.log("EL ID A ELIMNAR", id);
   return async (dispatch) => {
     try {
       await axios.delete(`${URL}/avisos/${id}`);

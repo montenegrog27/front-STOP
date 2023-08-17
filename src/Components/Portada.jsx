@@ -12,7 +12,6 @@ function Portada() {
   }, []);
 
   const aviso = useSelector((state) => state.avisos);
-  console.log(aviso);
   return (
     <div className="amarillo flex justify-start  pt-[50px]">
       {aviso.length ? (
