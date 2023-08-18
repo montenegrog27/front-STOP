@@ -16,7 +16,6 @@ function Home() {
   }, [dispatch]);
 
   const precios = useSelector((state) => state.precios);
-  console.log("preciosss", precios);
   return (
     <>
       <NavBar />
