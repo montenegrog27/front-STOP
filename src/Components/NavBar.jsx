@@ -18,27 +18,27 @@ function NavBar() {
           <img
             src={logoNuevo}
             alt="logo"
-            className="w-[55px] h-[25px] md:w-[65px] md:h-[30px] mt-3"
+            className="w-[55px] h-[25px] md:w-[65px] md:h-[30px] mt-1 mt:m-3"
           />
         </Link>
       </div>
       <div className=" flex w-[60%] justify-around">
         <a
-          className="m-3 text-gray-200 sm:text-[10px] md:text-[15px] lg:text-[20px] fonte hover:text-buttonBlue hover:scale-110 transition"
+          className=" m-1 md:m-3 text-gray-200 text-[14px] sm:text-[17px] md:text-[17px] lg:text-[20px] fonte hover:text-buttonBlue hover:scale-110 transition"
           href="/#destacados"
           onClick={(e) => handleScroll(e, "#destacados")}
         >
           Destacados
         </a>
         <a
-          className="m-3 text-gray-200 sm:text-[10px] md:text-[15px] lg:text-[20px] fonte hover:text-buttonBlue hover:scale-110 transition"
+          className=" m-1 md:m-3 text-gray-200 text-[14px] sm:text-[17px] md:text-[17px] lg:text-[20px] fonte hover:text-buttonBlue hover:scale-110 transition"
           href="/#ofertas"
           onClick={(e) => handleScroll(e, "#ofertas")}
         >
           OFERTAS
         </a>
         <a
-          className="m-3 text-gray-200 sm:text-[10px] md:text-[15px] lg:text-[20px] fonte hover:text-buttonBlue hover:scale-110 transition"
+          className=" m-1 md:m-3 text-gray-200 text-[14px] sm:text-[17px] md:text-[17px] lg:text-[20px] fonte hover:text-buttonBlue hover:scale-110 transition"
           href="/#contacto"
           onClick={(e) => handleScroll(e, "#contacto")}
         >

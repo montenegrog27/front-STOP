@@ -17,9 +17,9 @@ function Portada() {
       {aviso.length ? (
         <div
           id="aviso"
-          className="absolute border-[6px] items-center h-[200px] w-[250px] border-yellow-400 shadow-2xl mt-[37px] ml-[69%] text-2xl text-gray-200  p-2 rounded-[25px]"
+          className="absolute border-[3px] md:border-[6px] items-center h-[60px] md:h-[150px] lg:h-[200px]  w-[100px] md:w-[200px] lg:w-[250px] border-yellow-400 shadow-2xl mt-[10px] md:mt-[20px] lg:mt-[37px] ml-[69%] md:text-md lg:text-2xl text-gray-200  p-2 rounded-[25px]"
         >
-          <div className="flex justify-center items-center fonte text-[40px] h-full text-center">
+          <div className="flex justify-center items-center fonte text-[10px] md:text-[27px] lg:text-[40px] h-full text-center">
             {aviso ? aviso[0].contenido : ""}
           </div>
         </div>

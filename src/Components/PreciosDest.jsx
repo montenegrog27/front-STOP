@@ -67,17 +67,17 @@ function PreciosDest() {
           productosConPrecios.map((of) => (
             <div
               key={of.id}
-              className=" flex flex-col  w-[160px] md:w-[220px] bg-white shawod-md text-center h-[380px]   m-1 rounded-t rounded-b-2xl"
+              className=" flex flex-col  w-[160px] md:w-[220px] bg-white shawod-md text-center h-[280px] md:h-[380px]   m-1 rounded-t rounded-b-2xl"
             >
               <div className="flex justify-end ">
                 <div
                   id="cartelito"
-                  className=" absolute text-yellow-300 text-lg  px-4 py-1 -m-3   fonte bg-gradient-to-r from-rojoDark shadow-xl to-rojoLight transform -skew-x-12 "
+                  className=" absolute text-yellow-300 text-md md:text-lg px-3  md:px-4 py-1 -m-3   fonte bg-gradient-to-r from-rojoDark shadow-xl to-rojoLight transform -skew-x-12 "
                 >
                   Oferta!!!
                 </div>
                 <img
-                  className="mx-auto  w-full p-2 h-[250px]  object-cover"
+                  className="mx-auto  w-full  p-2 h-[150px] md:h-[250px]  object-cover"
                   src={of.imagen}
                   alt=""
                 />
